@@ -8,29 +8,34 @@
     
     <link rel="stylesheet" href="vendors/css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
-
+ 
     <script src="vendors/js/bootstrap.js"></script>
     <script src="js/jquery.js"></script>
+
     
 </head>
 <body>
 
     <?php 
         include("includes/init.inc.php"); 
+        session_start();
+
+        if (!empty($_POST['logout'])) {
+            session_destroy();
+        }
     ?>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="index.php">GotYa</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-link" href="#">Features</a>
-                <a class="nav-link" href="#">Pricing</a>
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a class="nav-link active" aria-current="page" href="index.php">Feed TimeLine</a>
+                <a class="nav-link" href="#">Top List</a>
+                <a class="nav-link" href="login.php">Login / Register</a>
             </div>
             </div>
         </div>
