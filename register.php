@@ -114,7 +114,15 @@
 
     }   
 
+
 ?>
+        <div>
+        
+            <p>Vous possédez déjà un compte ? Vous avez juste à vous <a href="login.php">login</a></p>
+        
+        </div>
+
+
 </div>
     
     

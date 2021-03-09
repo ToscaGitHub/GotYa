@@ -39,7 +39,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link active nav" aria-current="page" href="index.php">Feed TimeLine</a>
-                <a class="nav-link active nav" href="login.php">Login / Register</a>
+                <a class="nav-link active nav" href="register.php">Login / Register</a>
             </div>
             </div>
         </div>

@@ -15,6 +15,7 @@
     }
     ?>
 
+    <main>
 
     <div class="feed">
 
@@ -72,5 +73,14 @@
         </div>
 
     </div>
+
+    <div class="TierList">
+    
+    <p>a</p>
+    
+    </div>
+
+
+    </main>
 
 <?php require_once("includes/footer.inc.php"); ?>
