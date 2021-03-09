@@ -11,6 +11,7 @@
  
     <script src="vendors/js/bootstrap.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
 
     
 </head>
@@ -19,6 +20,10 @@
     <?php 
         include("includes/init.inc.php"); 
         session_start();
+
+        if (empty($_COOKIE['stayConnectToken'])) {
+            session_destroy();
+        }
 
         if (!empty($_POST['logout'])) {
             session_destroy();
@@ -33,9 +38,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="index.php">Feed TimeLine</a>
-                <a class="nav-link" href="#">Top List</a>
-                <a class="nav-link" href="login.php">Login / Register</a>
+                <a class="nav-link active nav" aria-current="page" href="index.php">Feed TimeLine</a>
+                <a class="nav-link active nav" href="login.php">Login / Register</a>
             </div>
             </div>
         </div>
