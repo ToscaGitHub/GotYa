@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GotYa</title>
     
-    <link rel="stylesheet" href="vendors/css/bootstrap.css">
+    <link rel="stylesheet" href="vendors/css/bootstrap.css">    
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
  
     <script src="vendors/js/bootstrap.js"></script>
@@ -19,15 +20,9 @@
 
     <?php 
         include("includes/init.inc.php"); 
-        session_start();
 
-        if (empty($_COOKIE['stayConnectToken'])) {
-            session_destroy();
-        }
+        session_start();  
 
-        if (!empty($_POST['logout'])) {
-            session_destroy();
-        }
     ?>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -39,7 +34,18 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link active nav" aria-current="page" href="index.php">Feed TimeLine</a>
-                <a class="nav-link active nav" href="register.php">Login / Register</a>
+                <?php
+                if (!empty($_SESSION['user']) || !empty($_COOKIE['stayConnect'])) {
+                ?>
+                    <a class="nav-link active nav" href="user.php">Mon Compte</a>
+                <?php
+                }
+                else {
+                ?>
+                    <a class="nav-link active nav" href="register.php">Login / Register</a>
+                <?php
+                } 
+                ?>
             </div>
             </div>
         </div>
